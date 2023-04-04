@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Desafio:Formulário</title>
+   <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif; /*fonte do texto*/
+        background-image: linear-gradient(to right, rgb(148,0,211), rgb(75,0,130)); /*Cor/imagem de fundo; dêgrade para direita)*/
+    }
+    .box{
+        color: white;
+        position: absolute; 
+        top: 250%; /*Para centralizar a caixa*/
+        left: 50%; /*centralização do texto a esquerda*/
+        transform: translate(-50%,-50%); 
+        background-color:purple; /*cor de fundo da caixa*/
+        padding: 15px; /*Espaço entre a caixa e a borda*/
+        border-radius: 15px; /*Para arredondar a borda*/
+        width: 30%; /*Para ajustar a largura da borda*/
+    }
+    fieldset{
+        border: 3px solid dodgerblue; /*Para colocar a cor da linha do fielset que contorna a caixa*/
+    }
+    legend{
+        border: 1px solid dodgerblue; /*Para colocar cor da borda da caixa da legenda*/
+        padding: 10px; /*Para ajustar o espaço da borda da caixa da legenda com o texto*/
+        text-align: center; /*Alinhar o centro da caixa da legenda no centro do formulário*/
+        background-color: dodgerblue; /*Cor de fundo da caixa da legenda*/
+        border-radius: 8px; /*Para arrendodar as bordas da caixa da legenda*/
+    }
+    .inputBox{
+        position: relative; /*Para ter a posição normal*/
+    }
+    .inputUser{
+        background: none; /*Para tirar a caixa branca das caixinhas de informações*/
+        border: none; /*Para tirar a borda das caixinhas de informações*/
+        border-bottom: 1px solid white; /*Para ficar uma marcação (linha) para responder as informações das caixinhas*/
+        outline: none; /*Para tirar a bordinha de selecionado quando clica na caixa de informações*/
+        color: white;
+        font-size: 15px; /*Para aumentar o espaço da linha para escrever as informções*
+        width: 100%; /*largura dos inputs*/
+        letter-spacing: 2px; /*Para colocar um espaçamento entre cada caractere*/
+    }
+    .labelInput{
+        position: absolute; /*Para fazer a parte da animação*/
+        top: 0px;
+        left: 0px;
+        pointer-events: none; /*Qualquer lugar que eu clicar dentro do input ele vai efetuar a ação*/
+        transition: .5s;
+    }
+    
+    
+   </style>
+  
+</head>
+<body>
+    
+   <div class="box">
+       <form action="">
+           <fieldset>
+               <legend><br><b>Dados Pessoais</b><br></legend>
+               <div class="inputBox">
+                   <label for="nome" class="labelInput"><strong>Nome completo:</strong></label><br><br>
+                   <input type="text" name="nome" id="nome" class="inputUser" required>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="data_de_nasciemnto" class="labelInput"><strong>Data de Nascimento:</strong></label><br><br>
+                       <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="ddd" class="labelInput"><strong>DDD:</strong></label><br><br>
+                       <input type="tel" name="ddd" id="ddd" class="inputUser" required>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="telefone" class="labelInput"><strong>Telefone:</strong></label><br><br>
+                       <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="endereco" class="labelInput"><strong>Endereço:</strong></label><br><br>
+                       <input type="text" name="endereço" id="endereço" class="inputUser" required>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="email" class="labelInput"><strong>Email:</strong></label><br><br>
+                   <input type="email" name="email" id="email" class="inputUser" required>
+               </div>
+               <br><br>
+               <div>
+                <p><strong>Gênero:</strong></p><br>
+                <input type="radio" id="feminino" name="genero" value="feminino"  checked required>
+                <label for="feminino">Feminino</label><br><br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="feminino">Masculino</label><br><br>
+                <input type="radio" id="outro" name="genero" value="feminino" required>
+                <label for="feminino">Outro</label><br><br>
+                <label for="qual">Qual:</label>
+                <input type="text" name="genero" id="qual" class="inputUser" required>
+               </div>
+               <br><br>
+               <br>
+               <div>
+                <p><strong>Nacionalidade:</strong></p>
+                <input type="radio" id="brasileiro" name="nacionalidade" value="brasileiro"  checked required>
+                <label for="brasileiro">brasileiro</label><br>
+                <input type="radio" id="outro" name="nacionalidade" value="outro" required>
+                <label for="outro">Outro</label><br><br>
+                <label for="qual">Qual?</label>
+                <input type="text" name="nacionalidade" id="qual" class="inputUser" required>
+               </div>
+               <br><br>
+               <br>
+               <div class="inputBox">
+                <label for="cep" class="labelInput"><strong>CEP:</strong></label><br><br>
+                <input type="tel" name="cep" id="cep" class="inputUser" required>
+            </div>
+               <br><br>
+               <div class="inputBox">
+                   <label for="estado"><strong>Estado:</strong></label>
+                   <select id="Estado:"> <!--Para criar uma caixa de lista de seleção de uma opção, e "option" são as opções da caixa-->
+                       <option selected disabled volue="">Selecione</option> <!--Seleção desativada, para não ativar nenhuma das opções de início-->
+                       <option>Acre (AC)</option>
+                       <option>Alagoas (AL)</option>
+                       <option>Amapá (AP)</option>
+                       <option>Amazonas (AM)</option>
+                       <option>Bahia (BA)</option>
+                       <option>Ceará (CE)</option>
+                       <option>Distrito Federal (DF)</option>
+                       <option>Espírito Santo (ES)</option>
+                       <option>Goiás (GO)</option>
+                       <option>Maranhão (MA)</option>
+                       <option>Mato Grosso (MT)</option>
+                       <option>Mato Grosso do Sul (MS)</option>
+                       <option>Minas Gerais (MG)</option>
+                       <option>Pará (PA)</option>
+                       <option>Paraíba (PB)</option>
+                       <option>Paraná (PR)</option>
+                       <option>Pernambuco (PE)</option>
+                       <option>Piuaí (PI)</option>
+                       <option>Rio de Janeiro (RJ)</option>
+                       <option>Rio Grande do Norte (RN)</option>
+                       <option>Rio Grande do Sul (RS)</option>
+                       <option>Rondônia (RO)</option>
+                       <option>Roraima (RR)</option>
+                       <option>Santa Catarina (SC)</option>
+                       <option>São Paulo (SP)</option>
+                       <option>Sergipe (SE)</option>
+                       <option>Tocantins (TO)</option>
+                   </select>
+               </div>
+               <br><br>
+               <div class="inputBox">
+                <label for="cidade" class="labelInput"><strong>Cidade:</strong></label><br><br>
+                <input type="tel" name="cidade" id="cidade" class="inputUser" required>
+            </div>
+               <br><br>
+           </fieldset>
+           <fieldset>
+               <legend><b>Formação Acadêmica</b></legend>
+               <br>
+               <div class="inputBox">
+                   <label><strong>Possui alguma formação acadêmica no IFTO?</strong></label><br><br>
+                       <input type="checkbox" id="formacao1" name="formacao1" value="não">
+                       <label for="formacao1">Não</label><br>
+                       <input type="checkbox" id="formacao2" name="formacao2" value="Tecnico_informática">
+                       <label for="formacao2">Sim, Técnico em Informática</label><br>
+                       <input type="checkbox" id="formacao3" name="formacao" value="ADS">
+                       <label for="formacao3">Sim, Análise e Desenvolvimento de Sistemas</label><br>
+                       <input type="checkbox" id="formacao6" name="formacao6" value="GTI">
+                       <label for="formacao6">Sim, Gestão da Tecnologia da Informação</label><br>
+               </div>
+               <br><br>
+               <br>
+               <div>
+                <p><strong>Além da formação técnicas profissional ofertada no IFTO, já possui algum outro tipo de curso?</strong></p><br><br>
+                <input type="radio" id="nao" name="formacao" value="nao"  checked required>
+                <label for="academica">Não</label><br><br>
+                <input type="radio" id="sim" name="formacao" value="sim" required>
+                <label for="academica">Sim</label><br><br>
+                <label for="qual">Qual?</label>
+                <input type="text" name="formacao" id="qual" class="inputUser" required>
+               </div>
+               <br><br>
+           </fieldset>
+           <fieldset>
+               <legend><b>Experiência Profissional</b></legend>
+               <br>
+               <div class="inputBox">
+                   <label><strong>Possui experiência profissional?</strong></label><br><br>
+                       <label>
+                           <input type="radio" name="experiencia" value="não" checked>Não
+                       </label>
+                       <label>
+                           <input type="radio" name="experiencia" value="sim">Sim
+                       </label>
+               </div>
+               <br><br>
+               <br>
+               <div class="inputBox">
+                <label for="nome" class="labelInput"><strong>Nome da última ou atual empresa:</strong></label><br><br>
+                <input type="text" name="nome_empresa" id="nome_empresa" class="inputUser" required>
+            </div>
+               <br><br>
+               <br>
+               <div class="inputBox">
+                   <label><strong>Cargo:</strong></label>
+                   <select id="cargo:">
+                       <option selected disabled value="">Selecione</option>
+                       <option>Desenvolvedor back-end</option>
+                       <option>Desenvolvedor front-end</option>
+                       <option>Engenheiro de software</option>
+                       <option>Product manager</option>
+                       <option>Desenvolvedor full-stack</option>
+                       <option>Gestor de mídias sociais</option>
+                       <option>Analista de Business Intelligence</option>
+                       <option>Especialista em machine learning</option>
+                       <option>Engenheiro de dados</option>
+                       <option>Cientista de dados</option>
+                       <option>Scrum master</option>
+                       <option>Gestor de projetos</option>
+                       <option>Desenvolvedor web</option>
+                       <option>Desenvolvedor de banco de dados</option>
+                       <option>Cientista de dados</option>
+                       <option>Scrum master</option>
+                       <option>Gestor de projetos</option>
+                       <option>Desenvolvedor web</option>
+                       <option>Desenvolvedor de banco de dados</option>
+                       <option>DPO (Data Protection Officer)</option>
+                       <option>Product Designer</option>
+                       <option>Consultor de TI</option>
+                       <option>Analista martech</option>
+                       <option>Administrador de sistemas</option>
+                       <option>Especialista em segurança da informação</option>
+                       <option>Especialista em e-commerce</option>
+                       <option>Desenvolvedor de aplicativo móvel</option>
+                       <option>Analista de big data</option>
+                       <option>Especialista em cloud</option>
+                       <option>Pentester</option>
+                       <option>outro</option>
+                       </select>
+                       </div>
+                       <br><br>
+                       <div>
+                        <label for="qual">Qual?</label>
+                        <input type="text" name="qual" id="qual" class="inputUser" required>
+                   </div>
+                   <br><br>
+                   <div class="inputBox">
+                       <br>
+                       <label><strong>Período de Atuação:</strong></label><br>
+                       <label>
+                           <input type="radio" name="atuacao" id="atuacao">Ainda estou atuando
+                       </label>
+                       <label>
+                           <input type="radio" name="atuacao" id="atuacao">Não estou mais atuando
+                       </label>
+                       <br><br>
+                       <div class="inputBox">
+                        <label for="data_de_nasciemnto" class="labelInput"><strong>Início:</strong></label><br><br>
+                            <input type="date" name="data_inicio" id="atuacao" class="inputUser" required>
+                   </div>
+                   <br><br>
+                   <div class="inputBox">
+                    <label for="data_de_nasciemnto" class="labelInput"><strong>Fim:</strong></label><br><br>
+                        <input type="date" name="data_inicio" id="atuacao" class="inputUser" required>
+                   </div>
+                   <br><br>
+                   <div class="inputBox">
+                       <label><strong>Principais Atividades e Responsabilidades:</strong></label><br>
+                       <textarea row="7" style="width: 26em" id="atividade" name="atividade"></textarea>
+                   </div>
+                   <br><br>
+                   <div class="inputBox">
+                       <label><strong>Se você possui mais experiências profissionais, liste-as abaixo (opcional):</strong></label><br>
+                       <textarea row="7" style="width: 26em" id="profissional" name="profissional"></textarea>
+                   </div>
+                   <br><br>
+           </fieldset>
+                   <fieldset>
+                       <legend><b>Habilidades Técnicas e Idiomas</b></legend>
+                       <br>
+                       <div class="inputBox">
+                        <label for="nome" class="labelInput"><strong>Informe quais Habilidades Técnicas Relevantes (softwares, ferramentas, certificações):</strong></label><br><br><br>
+                        <input type="text" name="habilidades" id="habilidades" class="inputUser" required>
+                    </div>
+                    <div>
+                        <p><strong>Possui habilidades com idiomas?</strong></p>
+                        <input type="radio" id="nao" name="idioma" value="nao"  checked required>
+                        <label for="brasileiro">Não</label><br>
+                        <input type="radio" id="sim" name="idioma" value="sim" required>
+                        <label for="outro">Sim</label><br><br>
+                        <label for="qual">Qual?</label>
+                        <input type="text" name="idioma" id="qual" class="inputUser" required>
+                       </div>
+                      <br><br>
+                       <div class="inputBox">
+                           <label><strong>Nível de Proficiência:</strong></label><br><br>
+                       <label>
+                           <input type="radio" name="nivel" value="basico" checked>Básico<br><br>
+                       </label>
+                       <label>
+                           <input type="radio" name="nivel" value="intermediario">Intermediário<br><br>
+                       </label>
+                       <label>
+                           <input type="radio" name="nivel" value="avancado">Avançado<br><br>
+                       </label>
+                       <label>
+                           <input type="radio" name="nivel" value="fluente">Fluente
+                       </label>
+                       </div>
+                       <br><br>
+                   </fieldset>
+                       <fieldset>
+                       <legend><b>Habilidades Comportamentais</b></legend>
+                   <br><br>
+                   <div class="inputBox">
+                    <label><strong>Liste três habilidades comportamentais que você considera serem suas principais qualidades profissionais:</strong></label><br><br>
+                    <div class="inputBox">
+                        <label for="primeira" class="labelInput"><strong>1°</strong></label><br><br>
+                        <input type="text" name="qualidades" id="primeira" class="inputUser" required>
+                    <div class="inputBox">
+                        <label for="segunda" class="labelInput"><strong>2°</strong></label><br><br>
+                        <input type="text" name="qualidades" id="segunda" class="inputUser" required>
+                    <div class="inputBox">
+                        <label for="teceira" class="labelInput"><strong>3°</strong></label><br><br>
+                        <input type="text" name="qualidades" id="terceira" class="inputUser" required>
+                        </div>
+                        <br>
+                            </div>
+                            <br>
+                            <div class="inputBox">
+                                <label for="endereco" class="labelInput"><strong>Endereço:</strong></label><br><br>
+                                    <input type="text" name="endereço" id="endereço" class="inputUser" required>
+                            </div>
+                            <br>
+                    </div>
+                    <br>
+                   </div>
+                   <br><br>
+                   <div class="inputBox">
+                       <label>
+                       <label><strong>Fale um pouco sobre a sua personalidade:</strong></label>
+                       <br>
+                       <textarea row="7" style="width: 26em" id="personalidade" name="personalidade"></textarea>
+                   </div>
+                   <br><br>
+                </fieldset>
+                <br>
+                   <input type="submit" name="submit" id="submit">
+                   </div>
+                   <br><br>
+                  
+       </form>
+
+
+   </div>
+</body>
+</html>
